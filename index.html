@@ -164,6 +164,17 @@ etherpad: http://pad.software-carpentry.org/r-resbaz-2016 # optional (insert the
 -->
 <h2 id="schedule">Schedule</h2>
 
+<p>
+  Each day will begin with a keynote story at 9am under the bedouin tents on South Lawn,
+  Followed by three 1.5 hour workshop sessions. On Monday and Tuesday you will 
+  be in Old Metallurgy 202 as part of the R Stream, then on Wednesday you will
+  be in different rooms depending on your chosen elective subjects. 
+</p>
+<p>
+  Morning tea, afternoon tea, lunch and dinner will be located on South Lawn under
+  the bedouin tents, as will the afternoon and evening social events.
+</p>
+
 <div class="row">
   <div class="col-md-6">
     <h3>Monday Febraury 1st</h3>
@@ -201,7 +212,7 @@ etherpad: http://pad.software-carpentry.org/r-resbaz-2016 # optional (insert the
 </div>
 <div class="row">
   <div class="col-md-6">
-    <h3>Day 2</h3>
+    <h3>Wednesday February 3rd</h3>
     <table class="table table-striped">
       <tr> <td>09:00</td>  <td>Keystory</td> </tr>
       <tr> <td>09:30</td>  <td>Elective Subject</td> </tr>
@@ -357,17 +368,53 @@ etherpad: http://pad.software-carpentry.org/r-resbaz-2016 # optional (insert the
   please preview your site before committing, and make sure to run
   'tools/check' as well.
 -->
-
-<h2 id="setup">Setup</h2>
-
+<h2 id="setup">Workshop Setup</h2>
+<h3>Create a GitHub account</h3>
 <p>
-  To participate in a Software Carpentry workshop, you will need
-  access to the software described below. In addition, you will
-  need an up-to-date web browser.
+  <a href="https://github.com/">GitHub</a> is an online hosting service for all your code.
+  We'll be using it in the lesson on version control,
+  and GitHub credentials are used for login authentication on DIT4C.
+  GitHub accounts are free, so sign up for one if you don't already have an account.
 </p>
+<h3>Login to DIT4C</h3>
 <p>
-  We maintain a list of common issues that occur during installation as a reference for instructors
-  that may be useful on the
+  During the first session of the workshop, the instructors will give you the
+  compute node name and access code you'll need for the Data Intensive Tools for
+  the Cloud (DIT4C) environment that is hosted on the NeCTAR Research Cloud. Once you've
+  got that name and code, navigate to the
+  <a href="http://resbaz.cloud.edu.au/ ">DIT4C homepage</a>
+  (it works best in the Chrome browser) and follow these instructions:
+  <ol>
+    <li>Click the "login" button and proceed to login using your GitHub credentials.</li>
+    <li>Go to the "compute nodes" tab and click "claim compute node access".</li>
+    <li>From the drop down menu, select the name of the compute node that the instructor
+    gave you and enter the corresponding access code.</li>
+    <li>Go to the "containers" tab and add a new container named after yourself
+    (e.g. johnsmith). The reason for this is that container names are unique (i.e. you can't
+    have the same container name as anyone else in the room). 
+    Select the "RStudio" image from the drop down menu, set the initial state to on
+    and then hit the create button.</li>
+    <li>When the container is "on", its name should turn blue and you can click on it to
+    launch your environment in a new tab of your browser.</li>
+    <li>Once you're finished for the day, simply close all the extra tabs that have opened up
+    and turn your container "off". When you come back tomorrow, simply switch back to the 'on'
+    position to continue using that container.</li>
+  </ol>
+</p>
+
+<hr />
+
+<h2 id="setup">Post-workshop software installation instructions</h2>
+
+<p>
+  The DIT4C environment comes with all the required software pre-installed, 
+  however if you would like to install the software on your own computer 
+  (either before or after the workshop),
+  here are the instructions to do so.
+</p>
+
+<p>
+  A list of common issues that occur during installation and their fixes can be found here. Ignore the sections on Python and SQL.
   <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
@@ -382,59 +429,19 @@ etherpad: http://pad.software-carpentry.org/r-resbaz-2016 # optional (insert the
   <div class="row">
     <div class="col-md-4">
       <h4 id="shell-windows">Windows</h4>
-      <ol>
-        <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
-        <li>Run the installer and follow the steps bellow:
-          <ol>
-            <!-- Git 2.6.1 Setup -->
-            <!-- Welcome to the Git Setup Wizard -->
-            <li>Click on "Next".</li>
-            <!-- Information -->
-            <li>Click on "Next".</li>
-            <!-- Select Destination Location -->
-            <li>Click on "Next".</li>
-            <!-- Select Components -->
-            <li>Click on "Next".</li>
-            <!-- Select Start Menu Folder -->
-            <li>Click on "Next".</li>
-            <!-- Adjusting your PATH environment -->
-            <li>
-              <strong>
-                Select "Use Git from the Windows Command Prompt" and click on "Next".
-              </strong>
-                If you forgot to do this programs that you need for the workshop will not work properly.
-                If this happens rerun the installer and select the appropriate option.
-            </li>
-            <!-- Configuring the line ending conversions -->
-            <li>
-              Click on "Next".
-              <strong>
-                Keep "Checkout Windows-style, commit Unix-style line endings" selected.
-              </strong>
-            </li>
-            <!-- Configuring the terminal emulator to use with Git Bash -->
-            <li>
-              <strong>
-                Select "Use Windows' default console window" and click on "Next".
-              </strong>
-            </li>
-            <!-- Configuring experimental performance tweaks -->
-            <li>Click on "Next".</li>
-            <!-- Installing -->
-            <!-- Completing the Git Setup Wizard -->
-            <li>Click on "Finish".</li>
-          </ol>
-        </li>
-      </ol>
-      <p>This will provide you with both Git and Bash in the Git Bash program.</p>
+      <p>
+        Install Git for Windows by downloading and running
+        <a href="http://msysgit.github.io/">the installer</a>.
+        This will provide you with both Git and Bash in the Git Bash program.
+      </p>
     </div>
     <div class="col-md-4">
       <h4 id="shell-macosx">Mac OS X</h4>
       <p>
-        The default shell in all versions of Mac OS X is Bash, so no
-        need to install anything.  You access Bash from the Terminal
+        The default shell in all versions of Mac OS X is bash, so no
+        need to install anything.  You access bash from the Terminal
         (found in
-        <code>/Applications/Utilities</code>). You may want to keep
+        <code>/Applications/Utilities</code>).  You may want to keep
         Terminal in your dock for this workshop.
       </p>
     </div>
@@ -515,7 +522,7 @@ etherpad: http://pad.software-carpentry.org/r-resbaz-2016 # optional (insert the
       <h4 id="editor-windows">Windows</h4>
       <p>
         nano is a basic editor and the default that instructors use in the workshop.
-        To install it,
+        To install it, 
         download the <a href="{{site.swc_installer}}">Software Carpentry Windows installer</a>
         and double click on the file to run it.
         <strong>This installer requires an active internet connection.</strong>
@@ -556,91 +563,6 @@ etherpad: http://pad.software-carpentry.org/r-resbaz-2016 # optional (insert the
     </div>
   </div>
 </div> <!-- End of 'editor' section. -->
-
-<div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
-           the workshop will teach Python using something other than
-           the IPython notebook.
-           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -->
-  <h3>Python</h3>
-
-  <p>
-    <a href="http://python.org">Python</a> is a popular language for
-    scientific computing, and great for general-purpose programming as
-    well.  Installing all of its scientific packages individually can be
-    a bit difficult, so we recommend
-    <a href="https://www.continuum.io/anaconda">Anaconda</a>,
-    an all-in-one installer.
-  </p>
-
-    <p>
-      Regardless of how you choose to install it,
-      <strong>please make sure you install Python version 3.x</strong>
-      (e.g., 3.4 is fine).
-    </p>
-
-    <p>
-      We will teach Python using the IPython notebook, a programming environment
-      that runs in a web browser. For this to work you will need a reasonably
-      up-to-date browser. The current versions of the Chrome, Safari and
-      Firefox browsers are all <a
-      href='http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility'>supported</a>
-      (some older browsers, including Internet Explorer version 9
-      and below, are not).
-    </p>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="python-windows">Windows</h4>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Windows.</li>
-        <li>Install Python 3 using all of the defaults for installation <em>except</em> make sure to check <strong>Make Anaconda the default Python</strong>.</li>
-      </ol>
-    </div>
-    <div class="col-md-4">
-      <h4 id="python-macosx">Mac OS X</h4>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for OS X.</li>
-        <li>Install Python 3 using all of the defaults for installation.</li>
-      </ol>
-    </div>
-    <div class="col-md-4">
-      <h4 id="python-linux">Linux</h4>
-      </p>
-      <ol>
-        <li>Open <a href="http://continuum.io/downloads">http://continuum.io/downloads</a> with your web browser.</li>
-        <li>Download the Python 3 installer for Linux.</li>
-        <li>Install Python 3 using all of the defaults for installation.
-        (Installation requires using the shell. If you aren't
-        comfortable doing the installation yourself
-        stop here and request help at the workshop.)</li>
-        <li>
-          Open a terminal window.
-        </li>
-        <li>
-          Type <pre>bash Anaconda-</pre> and then press
-          tab. The name of the file you just downloaded should
-          appear.
-        </li>
-        <li>
-          Press enter. You will follow the text-only prompts.  When
-          there is a colon at the bottom of the screen press the down
-          arrow to move down through the text. Type <code>yes</code> and
-          press enter to approve the license. Press enter to approve the
-          default location for the files. Type <code>yes</code> and
-          press enter to prepend Anaconda to your <code>PATH</code>
-          (this makes the Anaconda distribution the default Python).
-        </li>
-      </ol>
-    </div>
-  </div>
-  <p>
-  Once you are done installing the software listed above,
-  please go to <a href="setup/index.html">this page</a>,
-  which has instructions on how to test that everything was installed correctly.
-  </p>
-</div> <!-- End of 'Python' section. -->
 
 <div id="r"> <!-- Start of 'R' section. -->
   <h3>R</h3>
@@ -687,67 +609,3 @@ etherpad: http://pad.software-carpentry.org/r-resbaz-2016 # optional (insert the
   </div>
 </div> <!-- End of 'R' section. -->
 
-<div id="sql"> <!-- Start of 'SQLite' section. -->
-  <h3>SQLite</h3>
-
-  <p>
-    SQL is a specialized programming language used with databases.  We
-    use a simple database manager called
-    <a href="http://www.sqlite.org/">SQLite</a> in our lessons.
-  </p>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h4 id="sql-windows">Windows</h4>
-      <p>
-        The <a href="{{site.swc_github}}/windows-installer">Software Carpentry Windows Installer</a>
-        installs SQLite for Windows.
-        If you used the installer to configure nano, you don't need to run it again.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="sql-macosx">Mac OS X</h4>
-      <p>
-        SQLite comes pre-installed on Mac OS X.
-      </p>
-    </div>
-    <div class="col-md-4">
-      <h4 id="sql-linux">Linux</h4>
-      <p>
-        SQLite comes pre-installed on Linux.
-      </p>
-    </div>
-  </div>
-
-  <p><strong>If you installed Anaconda, it also has a copy of SQLite
-    <a href="https://github.com/ContinuumIO/anaconda-issues/issues/307">without support to <code>readline</code></a>.
-    Instructors will provide a workaround for it if needed.</strong></p>
-</div> <!-- End of 'SQLite' section. -->
-
-<!--
-  Uncomment this section if you are using our virtual machine.
-
-<div id="vm">
-  <h3>Virtual Machine</h3>
-
-  <p>
-    Some instructors prefer to have learners use a virtual machine (VM)
-    rather than install software on their own computers.  If your
-    instructors have chosen to do this, please:
-  </p>
-  <ol>
-    <li>
-      Install <a href="https://www.virtualbox.org/">VirtualBox</a>.
-    </li>
-    <li>
-      Download our <a href="{{site.swc_vm}}">VM image</a>.
-      <strong>Warning:</strong> this file is 1.7 GByte, so please
-      download it <em>before</em> coming to your workshop.
-    </li>
-    <li>
-      Load the VM into VirtualBox by selecting "Import Appliance" and
-      loading the <code>.ova</code> file.
-    </li>
-  </ol>
-</div>
--->
